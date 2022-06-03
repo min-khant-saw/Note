@@ -245,6 +245,9 @@ input:focus {
 }
 
 @media (max-width: 500px) {
+  .info {
+    width: 100%;
+  }
   .info textarea:focus,
   input:focus {
     background-color: #333;
