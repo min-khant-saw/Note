@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+}
+
+body::after {
+  position: var(--pos);
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.round-6 {
+  border-radius: 6px;
+}
+
+body {
+  background-color: #aaf;
+  position: relative;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  max-width: 50%;
+  gap: 1rem;
+  margin: auto;
+  /* margin-top: 250px; */
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.create-note {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #a041c9;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 1rem;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.create-note .span-container {
+  transition: all 0.4s ease-in-out;
+  border: 1px solid #fff;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.create-note .span-container > span {
+  font-size: 2rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.create-note .span-container,
+span {
+  color: #fff;
+}
+
+.create-note:hover > .span-container span {
+  font-size: 3rem;
+}
+
+.create-note:hover > .span-container {
+  width: 50px;
+  height: 50px;
+}
+
+.container .note {
+  background-color: #eee;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* align-items: center; */
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.container .note > .del {
+  color: #333;
+  pointer-events: visible;
+}
+
+.container .note .note-title {
+  pointer-events: none;
+  margin-bottom: auto;
+}
+
+.container .note small {
+  margin-top: auto;
+  margin-right: auto;
+  position: relative;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container .note small::after {
+  position: absolute;
+  content: "";
+  background-color: #333;
+  margin-bottom: 10px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  pointer-events: none;
+  height: 2px;
+}
+
+.container .note .note-text {
+  position: relative;
+  margin: 1rem;
+  max-width: 300px;
+  word-wrap: break-word;
+  pointer-events: none;
+  overflow: auto;
+}
+
+.container .note .note-text::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+.container .note .note-text::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: #333;
+}
+
+.container .note .note-text::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.container .note hr {
+  width: 90%;
+  pointer-events: none;
+  background-color: #333;
+}
+
+.container .note .del {
+  position: absolute;
+  bottom: 8px;
+  right: 5%;
+  font-size: 15px;
+  opacity: 0.6;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1;
+}
+
+.info {
+  transition: all 0.4s ease-in-out;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: max-content;
+  height: max-content;
+  background-color: #bbccff;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.info textarea,
+input,
+button {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px;
+  transition: all 0.4s ease-in-out;
+}
+
+.info button {
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
+  background-color: yellow;
+}
+
+.info textarea::placeholder,
+input::placeholder {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.info textarea:focus,
+input:focus {
+  background-color: #333;
+  margin: 1rem;
+  transform: scale(1.2);
+  color: #eee;
+}
+
+.info button:hover {
+  background-color: lightgoldenrodyellow;
+}
+
+.info textarea {
+  resize: none;
+  height: 100px;
+}
+
+.info label {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.remove-info {
+  position: absolute;
+  right: 0;
+  top: -5%;
+  margin: 10px;
+  font-size: 2rem;
+  user-select: none;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .info textarea:focus,
+  input:focus {
+    background-color: #333;
+    margin: auto;
+    transform: scale(1);
+    color: #eee;
+  }
+}
+
+@media (max-width: 1250px) {
+  .container {
+    margin-top: 200px;
+  }
+  .create-note {
+    height: max-content;
+    padding: 2rem;
+    width: 100%;
+  }
+  .container .note > .del {
+    display: none;
+  }
+}

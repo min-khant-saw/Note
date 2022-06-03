@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Note App</title>
+  </head>
+  <body>
+    <div class="create-note" onclick="create()">
+      <div class="span-container"><span class="plusSpan">&plus;</span></div>
+        <p style="color: #fff;">Add New Note</p>
+      </div>
+    </div>
+    <div class="container">
+      <!-- Create Note -->
+      <!-- <div class="create-note round-6" onclick="create()">
+        <div class="span-container"><span class="plusSpan">&plus;</span></div>
+        <p>Add New Note</p>
+      </div> -->
+    </div>
+    <!-- Create Note -->
+    <div class="info round-6">
+      <span class="remove-info" onclick="removeInfo()" style="color: #333;">&times;</span>
+      <form onsubmit="addFunction(event)">
+        <label for="head">Title</label>
+        <br />
+        <input
+        autocomplete="off"
+          type="text"
+          id="head"
+          class="round-6 input"
+          placeholder="Title"
+          maxlength="20"
+        />
+        <br />
+        <label for="text">Text</label>
+        <br />
+        <textarea
+          id="text"
+          cols="30"
+          class="round-6 input"
+          placeholder="Info"
+          wrap="soft"
+        ></textarea>
+        <button class="round-6" type="submit">Add New Note</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
